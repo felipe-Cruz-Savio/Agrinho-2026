@@ -38,6 +38,7 @@ body {
     overflow-x: hidden;
     color: rgb(255, 255, 255);
     font-family: Arial, sans-serif;
+    overflow: hidden;
 }
 
 .txt_container {
@@ -75,23 +76,42 @@ body {
     line-height: 1.6;
 }
 
-.local_botoes {
-    display: flex;
-    justify-content: center;
-    padding: 2rem;
-}
-
 .botao {
     background-color: #01ab51;
     border: none;
     cursor: pointer;
-    width: 10rem;
-    height: 5rem;
+    width: 6rem;
+    height: 3rem;
     font-size: 1.3rem;
     border-radius: 10px;
     transition: transform 0.3s ease;
+    margin-top: 2rem;
 }
 
 .botao:hover{
     transform: scale(1.1);
+}
+
+.camponome{
+    border: none;
+    height: 2rem;
+    width: 10rem;
+}
+
+.login {
+    height: 25rem;
+    width: 25rem;
+    background-color: #20613e;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 2rem;
+    border-radius: 2rem;
+    margin-top: 15rem;
+}
+
+.escondido {
+    display: none;
 }

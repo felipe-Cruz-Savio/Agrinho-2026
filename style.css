@@ -4,11 +4,10 @@
     box-sizing: border-box;
 }
 
-.logoimg
-{
-    height: 6rem;
-    width: 6rem;
-    margin-left: 3rem;
+.logoimg {
+    height: clamp(4rem, 10vw, 6rem);
+    width: clamp(4rem, 10vw, 6rem);
+    margin-left: clamp(1rem, 5vw, 3rem);
 }
 
 .areas {
@@ -17,13 +16,14 @@
     margin-left: auto;
     justify-content: space-between;
     gap: 1rem;
-    padding: 2rem;
+    padding: clamp(1rem, 3vw, 2rem);
+    flex-wrap: wrap;
 }
 
 header {
     background-color: #01ab51;
     width: 100%;
-    height: 6rem;
+    height: clamp(5rem, 12vw, 6rem);
     position: absolute;
     top: 0;
     z-index: 1000;
@@ -38,39 +38,46 @@ body {
     overflow-x: hidden;
     color: rgb(255, 255, 255);
     font-family: Arial, sans-serif;
-    overflow: hidden;
 }
 
 .txt_container {
-    margin-right: auto; 
-    margin-top: 6rem;
+    margin-inline: auto; 
+    margin-top: clamp(5rem, 12vw, 6rem);
+    width: 100%;
+    max-width: 1200px;
+    padding: 1rem;
 }
 
 .conteudoprincipal {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
 }
 
-.conteudoprincipal img{
-    width: 50%;
-    margin-left: 8rem;
+.conteudoprincipal img {
+    width: min(100%, 500px);
+    flex: 1 1 300px;
+    margin-left: 0;
+    height: auto;
+    object-fit: cover;
 }
 
-.conteudoprincipal p{
-    width: 50%;
+.conteudoprincipal p {
+    flex: 1 1 300px;
+    width: 100%;
 }
 
-.titulo{
-    padding: 1rem;
-    text-align: justify; 
-    text-justify: inter-word; 
+.titulo {
+    padding: 1rem 0;
+    text-align: left; 
     margin-bottom: 0.5rem;
 }
 
 .texto_PR {
     max-width: 800px;
     width: 100%; 
-    padding: 1rem;
+    padding: 0;
     text-align: justify; 
     text-justify: inter-word; 
     line-height: 1.6;
@@ -86,32 +93,122 @@ body {
     border-radius: 10px;
     transition: transform 0.3s ease;
     margin-top: 2rem;
+    color: white;
 }
 
-.botao:hover{
+.botao:hover {
     transform: scale(1.1);
 }
 
-.camponome{
+.camponome {
     border: none;
     height: 2rem;
     width: 10rem;
+    color: black;
 }
 
 .login {
-    height: 25rem;
-    width: 25rem;
+    width: min(90%, 25rem);
+    min-height: 20rem;
+    height: auto;
     background-color: #20613e;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: auto;
+    margin: max(5rem, 20vh) auto auto auto;
     padding: 2rem;
     border-radius: 2rem;
-    margin-top: 15rem;
 }
 
 .escondido {
     display: none;
+}
+
+
+.acessibilidade {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 9999;
+}
+
+#btn-acessibilidade {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#botoes-acessibilidade {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+#botoes-acessibilidade button {
+    margin: 5px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#btn-aumentar {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#btn-diminuir {
+    background-color: #FF5733;
+    color: white;
+}
+
+#btn-mudar-cor {
+    background-color: #3333FF;
+    color: white;
+}
+
+body.alto-contraste {
+    background: #000000;
+    color: #ffffff;
+}
+
+body.alto-contraste header {
+    background-color: #1a1a1a;
+    border-bottom: 2px solid #ffffff;
+}
+
+body.alto-contraste .login {
+    background-color: #1a1a1a;
+    border: 2px solid #ffffff;
+}
+
+body.alto-contraste .botao,
+body.alto-contraste #btn-acessibilidade,
+body.alto-contraste #btn-aumentar {
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: bold;
+    border: 2px solid #000000;
+}
+
+body.alto-contraste .camponome {
+    background-color: #ffffff;
+    color: #000000;
+    border: 2px solid #000000;
+}
+
+body.alto-contraste #btn-diminuir {
+    background-color: #ff6666;
+    color: #000000;
+    font-weight: bold;
+}
+
+body.alto-contraste #btn-mudar-cor {
+    background-color: #ffff00;
+    color: #000000;
+    font-weight: bold;
 }

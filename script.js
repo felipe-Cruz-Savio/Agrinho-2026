@@ -1,20 +1,13 @@
-const botao1 = document.getElementById('proxima1');
-if (botao1) {
-    botao1.addEventListener('click', function() {
-        window.location.href = 'dados.html';
-    });
-}
-
-const botao2 = document.getElementById('proxima2');
-if (botao2) {
-    botao2.addEventListener('click', function() {
-        window.location.href = 'aplicacoes.html';
-    });
-}
-
-const botao3 = document.getElementById('proxima3');
-if (botao3) {
-    botao3.addEventListener('click', function() {
-        window.location.href = 'index.html';
-    });
-}
+document.getElementById('entrar').addEventListener('click', function() {
+    const nomeUsuario = document.querySelector('.camponome').value.trim();
+    if (nomeUsuario === "") {
+        alert("Por favor, insira seu nome!");
+        return;
+    }
+    document.getElementById('nome-carregamento').textContent = nomeUsuario;
+    document.querySelector('.login').classList.add('escondido');
+    document.getElementById('tela-loading').classList.remove('escondido');
+    setTimeout(function() {
+        window.location.href = "main.html";
+    }, 2000); 
+});
